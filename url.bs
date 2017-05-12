@@ -280,10 +280,14 @@ U+005C (\), or U+005D (]).
 <a>domain</a> <var>domain</var>, runs these steps:
 
 <ol>
- <li><p>Let <var>result</var> be the result of running <a abstract-op lt=ToASCII>Unicode ToASCII</a> with
- <i>domain_name</i> set to <var>domain</var>, <i>UseSTD3ASCIIRules</i> set to false,
- <i>processing_option</i> set to <i>Nontransitional_Processing</i>, and <i>VerifyDnsLength</i> set
- to false.
+ <li>
+  <p>Let <var>result</var> be the result of running <a abstract-op lt=ToASCII>Unicode ToASCII</a>
+  with <i>domain_name</i> set to <var>domain</var>, <i>UseSTD3ASCIIRules</i> set to false,
+  <i>processing_option</i> set to <i>Nontransitional_Processing</i>, and <i>VerifyDnsLength</i> set
+  to false.
+
+  <p class="XXX">Browsers only seem to apply this when the input has non-ASCII code points. See
+  <a href="https://github.com/whatwg/url/issues/267">issue #267</a>.
 
  <li><p>If <var>result</var> is a failure value, <a>validation error</a>, return failure.
 
